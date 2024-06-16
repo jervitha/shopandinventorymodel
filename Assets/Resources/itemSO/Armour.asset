@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7af6e5e9b6294e74ac88bd43e20ee8d, type: 3}
+  m_Name: Armour
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: c0ea4b6e528e7fe4aa6cdc94d38691a1, type: 3}
+  itemName: Armour
+  maxStackSize: 5
+  itemRarity: 0
+  price: 7
+  weight: 5
+  description: 'giklklll '
+  itemType: 1

@@ -1,1 +1,1 @@
-# shopandinventorymodel
+# inventory-and-shop

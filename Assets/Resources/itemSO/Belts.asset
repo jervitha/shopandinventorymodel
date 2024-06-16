@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7af6e5e9b6294e74ac88bd43e20ee8d, type: 3}
+  m_Name: Belts
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: da09804303305f542a686824630e7269, type: 3}
+  itemName: Belts
+  maxStackSize: 10
+  itemRarity: 3
+  price: 12
+  weight: 12
+  description: Belt can be used during hardtime also
+  itemType: 2
