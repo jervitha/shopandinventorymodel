@@ -22,6 +22,8 @@ public class ShopController : GenericSingleton<ShopController>
         shopModel = GetComponent<ShopModel>();
         shopView = GetComponent<ShopView>();
 
+        
+    
     }
 
     public void OnArmourClicked()
@@ -51,6 +53,7 @@ public class ShopController : GenericSingleton<ShopController>
 
     private void UpdateShop(ItemType itemType)
     {
+       
         List<ItemSo> itemsToDisplay = new List<ItemSo>();
 
         if (itemType==ItemType.All)

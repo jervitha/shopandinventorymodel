@@ -3310,7 +3310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.20599365, y: -145.35199}
+  m_AnchoredPosition: {x: -0.20605469, y: -145.35199}
   m_SizeDelta: {x: -575.103, y: -828.365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016157300
@@ -5586,6 +5586,7 @@ GameObject:
   - component: {fileID: 1989993541}
   - component: {fileID: 1989993543}
   - component: {fileID: 1989993542}
+  - component: {fileID: 1989993544}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -5626,6 +5627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3662e98713cc64553ab97739483d7e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopModel: {fileID: 0}
   itemPrefab: {fileID: 1051240997592500594, guid: 1b7c5ca01324843cf9238a68155a44ee, type: 3}
   itemParent: {fileID: 1657261885}
   Money: 0
@@ -5647,6 +5649,19 @@ MonoBehaviour:
   itemtypeButtonMaterial: {fileID: 1119188568}
   itemtypeButtonWeapons: {fileID: 152638934}
   itemtypeButtonAll: {fileID: 1852672527}
+--- !u!114 &1989993544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989993540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1cd6f77e9bd4dd985a0723f64e2592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
 --- !u!1 &2097551827
 GameObject:
   m_ObjectHideFlags: 0
