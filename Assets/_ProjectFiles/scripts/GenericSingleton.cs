@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GenericSingleton<T> : MonoBehaviour where T:GenericSingleton<T>
 {
-   public static T Instance;
+   public static T Instance { get;private set; }
     public virtual void Awake()
     {
         if(Instance!=null)

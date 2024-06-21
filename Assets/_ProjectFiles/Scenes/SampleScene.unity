@@ -3122,16 +3122,16 @@ MonoBehaviour:
   rarityText: {fileID: 2097551829}
   priceText: {fileID: 974442970}
   weightText: {fileID: 1611991598}
-  AddItemCount: {fileID: 568207466}
-  SubstractItemCount: {fileID: 475894122}
-  ItemCountInputField: {fileID: 1683997920}
+  addItemCount: {fileID: 568207466}
+  substractItemCount: {fileID: 475894122}
+  itemCountInputField: {fileID: 1683997920}
   itemDescription: {fileID: 546383899}
   items: []
   itemPrefab: {fileID: 1051240997592500594, guid: 1b7c5ca01324843cf9238a68155a44ee, type: 3}
   itemParent: {fileID: 489061651}
   buyButton: {fileID: 165534188}
   sellButton: {fileID: 705083731}
-  SelecteditemSo: {fileID: 0}
+  selectedItemSo: {fileID: 0}
   maximumWeight: 200
 --- !u!1 &974442968
 GameObject:
@@ -4221,8 +4221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationParent: {fileID: 1016157298}
-  YesButtonConfirmation: {fileID: 129702627}
-  NoButtonConfirmation: {fileID: 1134576338}
+  yesButtonConfirmation: {fileID: 129702627}
+  noButtonConfirmation: {fileID: 1134576338}
   confirmationText: {fileID: 626117407}
   buyButton: {fileID: 165534188}
   sellButton: {fileID: 705083731}
@@ -5682,9 +5682,9 @@ MonoBehaviour:
   itemtypeButtonAll: {fileID: 1852672527}
   itemParent: {fileID: 1657261885}
   itemPrefab: {fileID: 1051240997592500594, guid: 1b7c5ca01324843cf9238a68155a44ee, type: 3}
-  ItemCountInputField: {fileID: 0}
-  AddButton: {fileID: 568207466}
-  SubtractButton: {fileID: 475894122}
+  itemCountInputField: {fileID: 1683997920}
+  addButton: {fileID: 568207466}
+  subtractButton: {fileID: 475894122}
 --- !u!1 &2097551827
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,9 +19,9 @@ public class ShopView:GenericSingleton<ShopView>
     [SerializeField] private Button itemtypeButtonAll;
     [SerializeField] private Transform itemParent;
     [SerializeField] private GameObject itemPrefab;
-    [SerializeField] TMP_InputField ItemCountInputField;
-    [SerializeField] private Button AddButton;
-    [SerializeField] private Button SubtractButton;
+    [SerializeField] TMP_InputField itemCountInputField;
+    [SerializeField] private Button addButton;
+    [SerializeField] private Button subtractButton;
 
 
 
@@ -29,9 +29,12 @@ public class ShopView:GenericSingleton<ShopView>
     {
         shopModel = new ShopModel();
         shopModel.items = Resources.LoadAll<ItemSo>("itemSO");
-        shopController = new ShopController(shopModel,this, ItemCountInputField);
-       
-       
+        shopController = new ShopController(shopModel,this, itemCountInputField);
+        addButton.onClick.AddListener(shopController.AddBuySellItems);
+        subtractButton.onClick.AddListener(shopController.SubtractBuySellItems);
+
+
+
 
     }
     private void OnEnable()
@@ -42,12 +45,6 @@ public class ShopView:GenericSingleton<ShopView>
         itemtypeButtonMaterial.onClick.AddListener(delegate { shopController.UpdateShop(ItemType.Materials); });
         itemtypeButtonWeapons.onClick.AddListener(delegate { shopController.UpdateShop(ItemType.Weapons); });
         itemtypeButtonAll.onClick.AddListener(delegate{shopController.UpdateShop(ItemType.All); });
-
-        AddButton.onClick.AddListener(AddBuySellItems);
-        SubtractButton.onClick.AddListener(SubtractBuySellItems);
-
-
-
     }
 
     private void OnDisable()
@@ -62,6 +59,7 @@ public class ShopView:GenericSingleton<ShopView>
     public void UpdateMoneyText(float money)
     {
         priceText.text= money.ToString();
+       
 
     }
 
@@ -76,41 +74,17 @@ public class ShopView:GenericSingleton<ShopView>
 
         foreach (ItemSo itemSo in itemsToDisplay)
         {
-            GameObject newItem = Instantiate(itemPrefab, itemParent);
-            ItemDisplay itemDisplay = newItem.GetComponent<ItemDisplay>();
+            
+           ItemDisplay itemDisplay = Instantiate(itemPrefab, itemParent).GetComponent<ItemDisplay>();
+          
             itemDisplay.UpdateItem(itemSo, itemSo.maxStackSize);
         }
     }
 
 
-    private void AddBuySellItems()
+    public void UpdateBuySellCountInputField(int count)
     {
-        int count;
-        if (int.TryParse(ItemCountInputField.text, out count))
-        {
-            count++;
-            ItemCountInputField.text = count.ToString();
-        }
-        else
-        {
-            ItemCountInputField.text = "1";
-        }
-    }
-    private void SubtractBuySellItems()
-    {
-        int count;
-        if (int.TryParse(ItemCountInputField.text, out count))
-        {
+        itemCountInputField.text = count.ToString();
 
-            if (count > 1)
-            {
-                count--;
-                ItemCountInputField.text = count.ToString();
-            }
-        }
-        else
-        {
-            ItemCountInputField.text = "1";
-        }
     }
 }

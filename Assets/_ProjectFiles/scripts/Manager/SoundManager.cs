@@ -24,7 +24,7 @@ public class SoundManager : GenericSingleton<SoundManager>
         {
             case SoundType.Cancellation:
                 return shopCancellationaudioClip;
-            case SoundType.confirmation:
+            case SoundType.Confirmation:
                 return shopConfirmationaudioClip;
             default:
                 return null;
@@ -39,6 +39,6 @@ public class SoundManager : GenericSingleton<SoundManager>
 public enum SoundType
 {
     Cancellation,
-    confirmation
+    Confirmation
 
 };

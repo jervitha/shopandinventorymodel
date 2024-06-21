@@ -20,9 +20,9 @@ public class InventoryManager : GenericSingleton<InventoryManager>
 
     [Header("Buttons")]
   
-    [SerializeField] private Button AddItemCount;
-    [SerializeField] private Button SubstractItemCount;
-     public TMP_InputField ItemCountInputField;
+    [SerializeField] private Button addItemCount;
+    [SerializeField] private Button substractItemCount;
+     public TMP_InputField itemCountInputField;
     [SerializeField] private GameObject itemDescription;
     [HideInInspector]public List<ItemDisplay> items;
     [SerializeField] private GameObject itemPrefab;
@@ -30,7 +30,7 @@ public class InventoryManager : GenericSingleton<InventoryManager>
     [SerializeField] private Button buyButton;
     [SerializeField] private Button sellButton;
 
-    public ItemSo SelecteditemSo;
+    public ItemSo selectedItemSo;
     private ItemSo[] itemSoArray;
    
 
@@ -52,11 +52,6 @@ public class InventoryManager : GenericSingleton<InventoryManager>
         OnitemSelected += OnItemPressed;
         itemSoArray=Resources.LoadAll<ItemSo>("itemSO");
         
-       
-      
-
-
-
     }
     private void OnDisable()
     {
@@ -66,7 +61,7 @@ public class InventoryManager : GenericSingleton<InventoryManager>
    
     private void OnItemPressed(ItemDisplay itemDisplay)
     {
-        SelecteditemSo = itemDisplay.itemSo;
+        selectedItemSo = itemDisplay.itemSo;
         if (itemDisplay.transform.parent == itemParent)
         {
             sellButton.gameObject.SetActive(true);

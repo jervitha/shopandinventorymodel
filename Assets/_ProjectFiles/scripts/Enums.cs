@@ -15,10 +15,10 @@ using UnityEngine;
 
  public enum ItemRarity
 {
-    low,
-    rare,
-    epic,
-    legendary
+    Low,
+    Rare,
+    Epic,
+    Legendary
 
 
 }

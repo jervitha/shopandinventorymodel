@@ -12,16 +12,18 @@ public class ShopController
     
    
     
-    private TMP_InputField ItemCountField;
+    private TMP_InputField itemCountField;
    
             
 
-    public  ShopController(ShopModel _shopModel, ShopView _shopView, TMP_InputField _ItemCountField)
+    public  ShopController(ShopModel _shopModel, ShopView _shopView, TMP_InputField _itemCountField)
     {
         shopModel = _shopModel;
         shopView = _shopView;
-        ItemCountField = _ItemCountField;
-        shopView.UpdateMoneyText(shopModel.Money);
+        itemCountField = _itemCountField;
+        shopView.UpdateMoneyText(shopModel.money);
+        itemCountField.onValueChanged.AddListener(OnBuySellItemCount);
+        shopView.UpdateBuySellCountInputField(shopModel.buySellItemCount);
 
     }
 
@@ -29,20 +31,20 @@ public class ShopController
 
     public void BuyItems()
     {
-        ItemSo _selecteditemSo = InventoryManager.Instance.SelecteditemSo;
+        ItemSo _selecteditemSo = InventoryManager.Instance.selectedItemSo;
 
-        if (!int.TryParse(ItemCountField.text, out int count))
+        if (!int.TryParse(itemCountField.text, out int count))
         {
 
             return;
         }
 
         float TotalPrice = _selecteditemSo.price * count;
-        if (TotalPrice <= shopModel.Money)
+        if (TotalPrice <= shopModel.money)
         {
             ToolTipManager.Instance.ShowTooltip("You bought :" + count + " " + _selecteditemSo.itemName);
-            shopModel.Money -= TotalPrice;
-            shopView.UpdateMoneyText(shopModel.Money);
+            shopModel.money -= TotalPrice;
+            shopView.UpdateMoneyText(shopModel.money);
             InventoryManager.Instance.GetItem(_selecteditemSo, count);
 
 
@@ -56,8 +58,8 @@ public class ShopController
     }
     public void SellItems()
     {
-        ItemSo _selecteditemSo = InventoryManager.Instance.SelecteditemSo;
-        if (!int.TryParse(ItemCountField.text, out int count))
+        ItemSo _selecteditemSo = InventoryManager.Instance.selectedItemSo;
+        if (!int.TryParse(itemCountField.text, out int count))
         {
             return;
         }
@@ -78,8 +80,8 @@ public class ShopController
             return;
         }
         float TotalPrice = _selecteditemSo.price * count;
-        shopModel.Money += TotalPrice;
-        shopView.UpdateMoneyText(shopModel.Money);
+        shopModel.money += TotalPrice;
+        shopView.UpdateMoneyText(shopModel.money);
         InventoryManager.Instance.RemoveItems(_selecteditemSo, count);
     }
 
@@ -107,8 +109,29 @@ public class ShopController
 
     }
 
-    
+    public void AddBuySellItems()
+    {
+        shopModel.buySellItemCount++;
+        shopView.UpdateBuySellCountInputField(shopModel.buySellItemCount);
+    }
 
+    public void SubtractBuySellItems()
+    {
+       if(shopModel.buySellItemCount>1)
+        {
+            shopModel.buySellItemCount--;
+            shopView.UpdateBuySellCountInputField(shopModel.buySellItemCount);
+        }
+       
+    }
+    private void OnBuySellItemCount(string str)
+    {
+        if (int.TryParse(str, out int count))
+        {
+            shopModel.buySellItemCount = count;
+            shopView.UpdateBuySellCountInputField(shopModel.buySellItemCount);
+        }
+    }
    
 
 

@@ -6,7 +6,8 @@ public class ShopModel
 {
 
     public ItemSo[] items;
-    public float Money;
+    public float money;
+    public int buySellItemCount=1;
   
 
 }
